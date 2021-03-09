@@ -82,6 +82,26 @@
         <div class="hex"></div>
         <div class="hex"></div>
     </div>
+    <div class="hex hex-row"></div>
+    <div class="hex hex-row"></div>
+    <div class="hex hex-row"></div>
+    <div class="hex hex-row"></div>
+    <div class="even">
+        <div class="hex"></div>
+        <div class="hex"></div>
+        <div class="hex"></div>
+        <div class="hex"></div>
+    </div>
+    <div class="hex hex-row"></div>
+    <div class="hex hex-row"></div>
+    <div class="hex hex-row"></div>
+    <div class="hex hex-row"></div>
+    <div class="even">
+        <div class="hex"></div>
+        <div class="hex"></div>
+        <div class="hex"></div>
+        <div class="hex"></div>
+    </div>
 </div>
 
 
