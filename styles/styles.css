@@ -12,7 +12,6 @@ body {   }
     float: left;
     content: " ";
     width:0;
-    border-right: 30px solid #559CD4;
     border-top: 52px solid transparent;
     border-bottom: 52px solid transparent;
     position: relative;
@@ -27,7 +26,6 @@ body {   }
     margin-left: 30px;
     width: 60px;
     height: 104px;
-    background-color: #559CD4;
     position: relative;
     -webkit-transform: rotateY(-360deg); transform-style: preserve-3d; transition: all 2.0s linear;
 }
@@ -36,7 +34,7 @@ body {   }
     float: right;
     content: "";
     position: relative;
-    border-left: 30px solid #559CD4;
+    border-left: 30px solid;
     border-top: 52px solid transparent;
     border-bottom: 52px solid transparent;
     left: 30px;
@@ -51,5 +49,9 @@ body {   }
 .even .hex {
     margin-right: 96px;
 }
+
+
+
+
 
 

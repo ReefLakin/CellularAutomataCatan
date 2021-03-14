@@ -1,6 +1,3 @@
-<?php
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,93 +13,293 @@
 
     <!-- Title -->
     <title>Cellular Automata Catan</title>
+
+
+    <style>
+
+        .imag-dead:before {
+            border-right-color: #bdbfba;
+        }
+        .imag-dead {
+            background-color: #bdbfba;
+        }
+        .imag-dead:after {
+            border-left-color: #bdbfba;
+        }
+
+        .imag-alive:before {
+            border-right-color: #6a6e63;
+        }
+        .imag-alive {
+            background-color: #6a6e63;
+        }
+        .imag-alive:after {
+            border-left-color: #6a6e63;
+        }
+
+        .real-dead:before {
+            border-right-color: #42e1fc;
+        }
+        .real-dead {
+            background-color: #42e1fc;
+        }
+        .real-dead:after {
+            border-left-color: #42e1fc;
+        }
+
+        .real-alive:before {
+            border-right-color: #1ee549;
+        }
+        .real-alive {
+            background-color: #1ee549;
+        }
+        .real-alive:after {
+            border-left-color: #1ee549;
+        }
+
+
+    </style>
+
+
+
+
 </head>
 <body>
 
 <!-- Stolen from the legend that is MattH22: https://codepen.io/MattH22/pen/pqFLJ -->
 
-<div id="hexe">
-    <div class="hex hex-row"></div>
-    <div class="hex hex-row"></div>
-    <div class="hex hex-row"></div>
-    <div class="hex hex-row"></div><br />
-    <div class="even">
-        <div class="hex hex-row"></div>
-        <div class="hex hex-row"></div>
-        <div class="hex hex-row"></div>
-        <div class="hex hex-row"></div>
-    </div>
-    <div class="hex hex-row"></div>
-    <div class="hex hex-row"></div>
-    <div class="hex hex-row"></div>
-    <div class="hex hex-row"></div>
-    <div class="even">
-        <div class="hex"></div>
-        <div class="hex"></div>
-        <div class="hex"></div>
-        <div class="hex"></div>
-    </div>
-    <div class="hex hex-row"></div>
-    <div class="hex hex-row"></div>
-    <div class="hex hex-row"></div>
-    <div class="hex hex-row"></div>
-    <div class="even">
-        <div class="hex hex-row"></div>
-        <div class="hex hex-row"></div>
-        <div class="hex hex-row"></div>
-        <div class="hex hex-row"></div>
-    </div>
-    <div class="hex hex-row"></div>
-    <div class="hex hex-row"></div>
-    <div class="hex hex-row"></div>
-    <div class="hex hex-row"></div>
-    <div class="even">
-        <div class="hex"></div>
-        <div class="hex"></div>
-        <div class="hex"></div>
-        <div class="hex"></div>
-    </div>
-    <div class="hex hex-row"></div>
-    <div class="hex hex-row"></div>
-    <div class="hex hex-row"></div>
-    <div class="hex hex-row"></div>
-    <div class="even">
-        <div class="hex hex-row"></div>
-        <div class="hex hex-row"></div>
-        <div class="hex hex-row"></div>
-        <div class="hex hex-row"></div>
-    </div>
-    <div class="hex hex-row"></div>
-    <div class="hex hex-row"></div>
-    <div class="hex hex-row"></div>
-    <div class="hex hex-row"></div>
-    <div class="even">
-        <div class="hex"></div>
-        <div class="hex"></div>
-        <div class="hex"></div>
-        <div class="hex"></div>
-    </div>
-    <div class="hex hex-row"></div>
-    <div class="hex hex-row"></div>
-    <div class="hex hex-row"></div>
-    <div class="hex hex-row"></div>
-    <div class="even">
-        <div class="hex"></div>
-        <div class="hex"></div>
-        <div class="hex"></div>
-        <div class="hex"></div>
-    </div>
-    <div class="hex hex-row"></div>
-    <div class="hex hex-row"></div>
-    <div class="hex hex-row"></div>
-    <div class="hex hex-row"></div>
-    <div class="even">
-        <div class="hex"></div>
-        <div class="hex"></div>
-        <div class="hex"></div>
-        <div class="hex"></div>
-    </div>
-</div>
+
+<?php
+
+
+// Function for general Elementary Cellular Automation.
+function cellularQuery($ruleset, $left, $mid, $right) {
+    if ($left == 1 && $mid == 1 && $right == 1) {
+        return $ruleset[0];
+    }
+    else if ($left == 1 && $mid == 1 && $right == 0) {
+        return $ruleset[1];
+    }
+    else if ($left == 1 && $mid == 0 && $right == 1) {
+        return $ruleset[2];
+    }
+    else if ($left == 1 && $mid == 0 && $right == 0) {
+        return $ruleset[3];
+    }
+    else if ($left == 0 && $mid == 1 && $right == 1) {
+        return $ruleset[4];
+    }
+    else if ($left == 0 && $mid == 1 && $right == 0) {
+        return $ruleset[5];
+    }
+    else if ($left == 0 && $mid == 0 && $right == 1) {
+        return $ruleset[6];
+    }
+    else {
+        return $ruleset[7];
+    }
+}
+
+
+// The number representing the initial active cells is defined; converted to a binary string using the "decbin" function.
+// Then, format correctly; concatenate with leading leading zeros if necessary.
+$initial = decbin(100);
+if (strlen($initial) != 8) {
+    $initial = ("0" * ( 8 - strlen($initial) )) . $initial;
+}
+
+
+// Define the number representing the ECA ruleset.
+// Add formatting.
+$rule = decbin(236);
+if (strlen($initial) != 8) {
+    $initial = ("0" * ( 8 - strlen($initial) )) . $initial;
+}
+
+
+// Echo the binary value; verification purposes.
+echo $initial;
+
+
+// Initialise the 2-D array of hex cells.
+$cells = array (
+    array(substr($initial, 0, 1), substr($initial, 1, 1), substr($initial, 2, 1), substr($initial, 3, 1), substr($initial, 4, 1), substr($initial, 5, 1), substr($initial, 6, 1), substr($initial, 7, 1)),
+    array(0, 0, 0, 0, 0, 0, 0, 0),
+    array(0, 0, 0, 0, 0, 0, 0, 0),
+    array(0, 0, 0, 0, 0, 0, 0, 0),
+    array(0, 0, 0, 0, 0, 0, 0, 0),
+    array(0, 0, 0, 0, 0, 0, 0, 0),
+    array(0, 0, 0, 0, 0, 0, 0, 0),
+    array(0, 0, 0, 0, 0, 0, 0, 0),
+);
+
+
+// Initialise the ruleset array.
+$ruleset = array(substr($rule, 0, 1), substr($rule, 1, 1), substr($rule, 2, 1), substr($rule, 3, 1), substr($rule, 4, 1), substr($rule, 5, 1), substr($rule, 6, 1), substr($rule, 7, 1));
+
+
+// Print start of above array for verification.
+echo "   ";
+echo $cells[0][0];
+echo $cells[0][1];
+echo $cells[0][2];
+echo $cells[0][3];
+
+
+// Apply Elementary Cellular Automata rules within a 2-dimensional array.
+$cellLeft = 0;
+$cellMiddle = 0;
+$cellRight = 0;
+$subject = 0;
+
+for ($rows = 1; $rows < 8; $rows++) {
+
+    for ($cols = 0; $cols < 8; $cols = $cols + 2) {
+        if ($cols == 0) {
+            $cellLeft = $cells[$rows - 1][7];
+        }
+        else {
+            $cellLeft = $cells[$rows - 1][$cols - 1];
+        }
+        $cellMiddle = $cells[$rows - 1][$cols];
+        $cellRight = $cells[$rows - 1][$cols + 1];
+
+        $subject = cellularQuery($ruleset, $cellLeft, $cellMiddle, $cellRight);
+        $cells[$rows][$cols] = $subject;
+    }
+
+    for ($cols = 1; $cols < 8; $cols = $cols + 2) {
+        if ($cols == 7) {
+            $cellRight = $cells[$rows][0];
+        }
+        else {
+            $cellRight = $cells[$rows][$cols + 1];
+        }
+        $cellMiddle = $cells[$rows - 1][$cols];
+        $cellLeft = $cells[$rows][$cols - 1];
+
+        $subject = cellularQuery($ruleset, $cellLeft, $cellMiddle, $cellRight);
+        $cells[$rows][$cols] = $subject;
+    }
+}
+
+
+// Visualise the results with HTML, CSS and PHP; front-end part.
+echo '<div id="hexe">';
+
+for ($rows = 0; $rows < 8; $rows++) {
+    for ($cols = 0; $cols < 8; $cols = $cols + 2) {
+        if ($cells[$rows][$cols] == 1) {
+            echo '    <div class="hex hex-row real-alive"></div>';
+        }
+        else {
+            echo '    <div class="hex hex-row real-dead"></div>';
+        }
+    }
+    echo '    <br />';
+    echo '    <div class="even">';
+    for ($cols = 1; $cols < 8; $cols = $cols + 2) {
+        if ($cells[$rows][$cols] == 1) {
+            echo '        <div class="hex hex-row real-alive"></div>';
+        }
+        else {
+            echo '        <div class="hex hex-row real-dead"></div>';
+        }
+    }
+    echo '    </div>';
+}
+
+echo '</div>';
+
+
+
+
+?>
+
+
+
+<!--<div id="hexe">-->
+<!--    <div class="hex hex-row real-alive"></div>-->
+<!--    <div class="hex hex-row"></div>-->
+<!--    <div class="hex hex-row"></div>-->
+<!--    <div class="hex hex-row"></div><br />-->
+<!--    <div class="even">-->
+<!--        <div class="hex hex-row"></div>-->
+<!--        <div class="hex hex-row"></div>-->
+<!--        <div class="hex hex-row"></div>-->
+<!--        <div class="hex hex-row"></div>-->
+<!--    </div>-->
+<!--    <div class="hex hex-row"></div>-->
+<!--    <div class="hex hex-row"></div>-->
+<!--    <div class="hex hex-row"></div>-->
+<!--    <div class="hex hex-row"></div>-->
+<!--    <div class="even">-->
+<!--        <div class="hex"></div>-->
+<!--        <div class="hex"></div>-->
+<!--        <div class="hex"></div>-->
+<!--        <div class="hex"></div>-->
+<!--    </div>-->
+<!--    <div class="hex hex-row"></div>-->
+<!--    <div class="hex hex-row"></div>-->
+<!--    <div class="hex hex-row"></div>-->
+<!--    <div class="hex hex-row"></div>-->
+<!--    <div class="even">-->
+<!--        <div class="hex hex-row"></div>-->
+<!--        <div class="hex hex-row"></div>-->
+<!--        <div class="hex hex-row"></div>-->
+<!--        <div class="hex hex-row"></div>-->
+<!--    </div>-->
+<!--    <div class="hex hex-row"></div>-->
+<!--    <div class="hex hex-row"></div>-->
+<!--    <div class="hex hex-row"></div>-->
+<!--    <div class="hex hex-row"></div>-->
+<!--    <div class="even">-->
+<!--        <div class="hex"></div>-->
+<!--        <div class="hex"></div>-->
+<!--        <div class="hex"></div>-->
+<!--        <div class="hex"></div>-->
+<!--    </div>-->
+<!--    <div class="hex hex-row"></div>-->
+<!--    <div class="hex hex-row"></div>-->
+<!--    <div class="hex hex-row"></div>-->
+<!--    <div class="hex hex-row"></div>-->
+<!--    <div class="even">-->
+<!--        <div class="hex hex-row"></div>-->
+<!--        <div class="hex hex-row"></div>-->
+<!--        <div class="hex hex-row"></div>-->
+<!--        <div class="hex hex-row"></div>-->
+<!--    </div>-->
+<!--    <div class="hex hex-row"></div>-->
+<!--    <div class="hex hex-row"></div>-->
+<!--    <div class="hex hex-row"></div>-->
+<!--    <div class="hex hex-row"></div>-->
+<!--    <div class="even">-->
+<!--        <div class="hex"></div>-->
+<!--        <div class="hex"></div>-->
+<!--        <div class="hex"></div>-->
+<!--        <div class="hex"></div>-->
+<!--    </div>-->
+<!--    <div class="hex hex-row"></div>-->
+<!--    <div class="hex hex-row"></div>-->
+<!--    <div class="hex hex-row"></div>-->
+<!--    <div class="hex hex-row"></div>-->
+<!--    <div class="even">-->
+<!--        <div class="hex"></div>-->
+<!--        <div class="hex"></div>-->
+<!--        <div class="hex"></div>-->
+<!--        <div class="hex"></div>-->
+<!--    </div>-->
+<!--    <div class="hex hex-row"></div>-->
+<!--    <div class="hex hex-row"></div>-->
+<!--    <div class="hex hex-row"></div>-->
+<!--    <div class="hex hex-row"></div>-->
+<!--    <div class="even">-->
+<!--        <div class="hex"></div>-->
+<!--        <div class="hex"></div>-->
+<!--        <div class="hex"></div>-->
+<!--        <div class="hex"></div>-->
+<!--    </div>-->
+<!--</div>-->
 
 
 
