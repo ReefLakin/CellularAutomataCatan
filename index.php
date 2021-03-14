@@ -103,7 +103,7 @@ function cellularQuery($ruleset, $left, $mid, $right) {
 
 // The number representing the initial active cells is defined; converted to a binary string using the "decbin" function.
 // Then, format correctly; concatenate with leading leading zeros if necessary.
-$initial = decbin(100);
+$initial = decbin(126);
 if (strlen($initial) != 8) {
     $initial = ("0" * ( 8 - strlen($initial) )) . $initial;
 }
@@ -111,7 +111,7 @@ if (strlen($initial) != 8) {
 
 // Define the number representing the ECA ruleset.
 // Add formatting.
-$rule = decbin(236);
+$rule = decbin(153);
 if (strlen($initial) != 8) {
     $initial = ("0" * ( 8 - strlen($initial) )) . $initial;
 }
@@ -189,22 +189,72 @@ echo '<div id="hexe">';
 
 for ($rows = 0; $rows < 8; $rows++) {
     for ($cols = 0; $cols < 8; $cols = $cols + 2) {
-        if ($cells[$rows][$cols] == 1) {
-            echo '    <div class="hex hex-row real-alive"></div>';
+
+        if (
+            ($rows == 0 && $cols == 0) ||
+            ($rows == 0 && $cols == 2) ||
+            ($rows == 0 && $cols == 4) ||
+            ($rows == 0 && $cols == 6) ||
+            ($rows == 1 && $cols == 0) ||
+            ($rows == 1 && $cols == 6) ||
+            ($rows == 7 && $cols == 0) ||
+            ($rows == 7 && $cols == 6)
+        ) {
+            if ($cells[$rows][$cols] == 1) {
+                echo '        <div class="hex hex-row imag-alive"></div>';
+            }
+            else {
+                echo '        <div class="hex hex-row imag-dead"></div>';
+            }
         }
         else {
-            echo '    <div class="hex hex-row real-dead"></div>';
+            if ($cells[$rows][$cols] == 1) {
+                echo '    <div class="hex hex-row real-alive"></div>';
+            }
+            else {
+                echo '    <div class="hex hex-row real-dead"></div>';
+            }
         }
+
+
+
     }
     echo '    <br />';
     echo '    <div class="even">';
     for ($cols = 1; $cols < 8; $cols = $cols + 2) {
-        if ($cells[$rows][$cols] == 1) {
-            echo '        <div class="hex hex-row real-alive"></div>';
+
+        if (
+                ($rows == 0 && $cols == 1) ||
+                ($rows == 0 && $cols == 5) ||
+                ($rows == 0 && $cols == 7) ||
+                ($rows == 1 && $cols == 7) ||
+                ($rows == 2 && $cols == 7) ||
+                ($rows == 3 && $cols == 7) ||
+                ($rows == 4 && $cols == 7) ||
+                ($rows == 5 && $cols == 7) ||
+                ($rows == 6 && $cols == 7) ||
+                ($rows == 7 && $cols == 1) ||
+                ($rows == 7 && $cols == 5) ||
+                ($rows == 7 && $cols == 7)
+        ) {
+            if ($cells[$rows][$cols] == 1) {
+                echo '        <div class="hex hex-row imag-alive"></div>';
+            }
+            else {
+                echo '        <div class="hex hex-row imag-dead"></div>';
+            }
         }
+
         else {
-            echo '        <div class="hex hex-row real-dead"></div>';
+            if ($cells[$rows][$cols] == 1) {
+                echo '        <div class="hex hex-row real-alive"></div>';
+            }
+            else {
+                echo '        <div class="hex hex-row real-dead"></div>';
+            }
         }
+
+
     }
     echo '    </div>';
 }
