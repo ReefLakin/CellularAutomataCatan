@@ -38,23 +38,23 @@
         }
 
         .real-dead:before {
-            border-right-color: #42e1fc;
+            border-right-color: #8be2ef;
         }
         .real-dead {
-            background-color: #42e1fc;
+            background-color: #8be2ef;
         }
         .real-dead:after {
-            border-left-color: #42e1fc;
+            border-left-color: #8be2ef;
         }
 
         .real-alive:before {
-            border-right-color: #1ee549;
+            border-right-color: #70e30a;
         }
         .real-alive {
-            background-color: #1ee549;
+            background-color: #70e30a;
         }
         .real-alive:after {
-            border-left-color: #1ee549;
+            border-left-color: #70e30a;
         }
 
 
@@ -66,7 +66,7 @@
 </head>
 <body>
 
-<!-- Stolen from the legend that is MattH22: https://codepen.io/MattH22/pen/pqFLJ -->
+<!-- Hex Layout is Stolen from the legend that is MattH22: https://codepen.io/MattH22/pen/pqFLJ -->
 
 
 <?php
@@ -103,17 +103,25 @@ function cellularQuery($ruleset, $left, $mid, $right) {
 
 // The number representing the initial active cells is defined; converted to a binary string using the "decbin" function.
 // Then, format correctly; concatenate with leading leading zeros if necessary.
-$initial = decbin(126);
+$initial = decbin(152);
+$concatZ = "";
 if (strlen($initial) != 8) {
-    $initial = ("0" * ( 8 - strlen($initial) )) . $initial;
+    for ($i = 1; $i <= 8 - strlen($initial); $i++) {
+        $concatZ = $concatZ . "0";
+    }
+    $initial = $concatZ . $initial;
 }
 
 
 // Define the number representing the ECA ruleset.
 // Add formatting.
-$rule = decbin(153);
-if (strlen($initial) != 8) {
-    $initial = ("0" * ( 8 - strlen($initial) )) . $initial;
+$rule = decbin(241);
+$concatZ = "";
+if (strlen($rule) != 8) {
+    for ($i = 1; $i <= 8 - strlen($rule); $i++) {
+        $concatZ = $concatZ . "0";
+    }
+    $rule = $concatZ . $rule;
 }
 
 
