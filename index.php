@@ -8,15 +8,73 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
-    <!-- Link to Main Stylesheet -->
-    <link rel="stylesheet" type="text/css" href="styles/styles.css">
-
     <!-- Title -->
     <title>Cellular Automata Catan</title>
-
-
+    
     <style>
 
+
+        /* Removed from .css file due to it causing some problems. */
+        body {   }
+        #hexe { width: 900px; }
+        #hexes {
+            -webkit-transform: perspective(600px) rotateX(60deg);
+            -moz-transform: perspective(600px) rotateX(60deg);
+            -ms-transform: perspective(600px) rotateX(60deg);
+            -o-transform: perspective(600px) rotateX(60deg);
+            transform: perspective(600px) rotateX(60deg);
+        }
+
+        .hex:before {
+            float: left;
+            content: " ";
+            width:0;
+            border-right: 30px solid #559CD4;
+            border-top: 52px solid transparent;
+            border-bottom: 52px solid transparent;
+            position: relative;
+            left: -30px;
+            transition: all 2.0s linear;
+        }
+
+        .hex {
+            margin-right: -26px;
+            margin-bottom: -50px;
+            float: left;
+            margin-left: 30px;
+            width: 60px;
+            height: 104px;
+            background-color: #559CD4;
+            position: relative;
+            -webkit-transform: rotateY(-360deg); transform-style: preserve-3d; transition: all 2.0s linear;
+        }
+
+        .hex:after {
+            float: right;
+            content: "";
+            position: relative;
+            border-left: 30px solid #559CD4;
+            border-top: 52px solid transparent;
+            border-bottom: 52px solid transparent;
+            left: 30px;
+            transition: all 2.0s linear;
+        }
+
+        .hex-row {
+            margin-right: 96px;
+        }
+
+        .even { clear: left; margin-top: 2px; margin-left: 93px;}
+        .even .hex {
+            margin-right: 96px;
+        }
+
+
+
+
+
+
+        /* Styling used for the coloured tiles. */
         .imag-dead:before {
             border-right-color: #bdbfba;
         }
@@ -60,9 +118,6 @@
 
     </style>
 
-
-
-
 </head>
 <body>
 
@@ -103,7 +158,7 @@ function cellularQuery($ruleset, $left, $mid, $right) {
 
 // The number representing the initial active cells is defined; converted to a binary string using the "decbin" function.
 // Then, format correctly; concatenate with leading leading zeros if necessary.
-$initial = decbin(152);
+$initial = decbin(101);
 $concatZ = "";
 if (strlen($initial) != 8) {
     for ($i = 1; $i <= 8 - strlen($initial); $i++) {
@@ -115,7 +170,7 @@ if (strlen($initial) != 8) {
 
 // Define the number representing the ECA ruleset.
 // Add formatting.
-$rule = decbin(241);
+$rule = decbin(173);
 $concatZ = "";
 if (strlen($rule) != 8) {
     for ($i = 1; $i <= 8 - strlen($rule); $i++) {
