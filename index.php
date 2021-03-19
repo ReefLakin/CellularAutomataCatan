@@ -10,7 +10,7 @@
 
     <!-- Title -->
     <title>Cellular Automata Catan</title>
-    
+
     <style>
 
 
@@ -124,6 +124,18 @@
 <!-- Hex Layout is Stolen from the legend that is MattH22: https://codepen.io/MattH22/pen/pqFLJ -->
 
 
+<form method="get" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+    <label for="init">Initial Activated Cells:</label><br>
+    <input type="text" id="init" name="init"><br>
+    <label for="rule">Wolfram CA Rule:</label><br>
+    <input type="text" id="rule" name="rule">
+    <input type="submit" value="Generate">
+    <input type="reset" value="Clear">
+</form>
+
+<br><br>
+
+
 <?php
 
 
@@ -158,7 +170,13 @@ function cellularQuery($ruleset, $left, $mid, $right) {
 
 // The number representing the initial active cells is defined; converted to a binary string using the "decbin" function.
 // Then, format correctly; concatenate with leading leading zeros if necessary.
-$initial = decbin(101);
+if (empty($_GET["init"])) {
+    $initial = decbin(88);
+}
+else {
+    $initial = decbin((int)$_GET["init"]);
+}
+
 $concatZ = "";
 if (strlen($initial) != 8) {
     for ($i = 1; $i <= 8 - strlen($initial); $i++) {
@@ -170,7 +188,14 @@ if (strlen($initial) != 8) {
 
 // Define the number representing the ECA ruleset.
 // Add formatting.
-$rule = decbin(173);
+if (empty($_GET["rule"])) {
+    $rule = decbin(77);
+}
+else {
+    $rule = decbin((int)$_GET["rule"]);
+}
+
+
 $concatZ = "";
 if (strlen($rule) != 8) {
     for ($i = 1; $i <= 8 - strlen($rule); $i++) {
@@ -180,8 +205,8 @@ if (strlen($rule) != 8) {
 }
 
 
-// Echo the binary value; verification purposes.
-echo $initial;
+// Echo the binary value; verification purposes (disabled).
+//echo $initial;
 
 
 // Initialise the 2-D array of hex cells.
@@ -201,12 +226,12 @@ $cells = array (
 $ruleset = array(substr($rule, 0, 1), substr($rule, 1, 1), substr($rule, 2, 1), substr($rule, 3, 1), substr($rule, 4, 1), substr($rule, 5, 1), substr($rule, 6, 1), substr($rule, 7, 1));
 
 
-// Print start of above array for verification.
-echo "   ";
-echo $cells[0][0];
-echo $cells[0][1];
-echo $cells[0][2];
-echo $cells[0][3];
+// Print start of above array for verification (disabled).
+//echo "   ";
+//echo $cells[0][0];
+//echo $cells[0][1];
+//echo $cells[0][2];
+//echo $cells[0][3];
 
 
 // Apply Elementary Cellular Automata rules within a 2-dimensional array.
