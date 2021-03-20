@@ -10,14 +10,15 @@ A landmass generator for Catan Seafarers, using elementary cellular automation.
 
 <br>
 
-## :bookmark_tabs: Navigation
+:bookmark_tabs: 
+## Navigation
 
 <br>
 
-- [About](#:bulb:-About)
+- [About](#About)
     - [Wolfram Rules Examples](#Rule-30)
     - [Rule 153 in Action](#Rule-153-In-Action)
-- [FAQs](#:question:-FAQs)
+- [FAQs](#FAQs)
 
 <br>
 
@@ -25,7 +26,8 @@ A landmass generator for Catan Seafarers, using elementary cellular automation.
 
 <br>
 
-## :bulb: About
+:bulb:
+## About
 
 Randomly generating your map with Catan's original board is simple: shuffle the tiles and the little numbered circles, and get to work scattering them across your world with little effort or premeditated design. The resulting tile arrangement should be unique and hopefully provide you with yet another interesting game. Of course, players are welcome to design their maps however they wish. But it is far more interesting to throw them down into a random arrangement that nobody can be prepared for.
 
@@ -81,7 +83,8 @@ You can spend fifteen minutes sketching the hexagons and colouring them in like 
 
 <br>
 
-## :question: FAQs
+:question:
+## FAQs
 
 If you have a question that is yet to be answered, reach out to me at *reef.lakin@students.plymouth.ac.uk* and I will add it below.
 
