@@ -1,0 +1,57 @@
+body {   }
+#hexe { width: 870px; }
+#hexes {
+    -webkit-transform: perspective(600px) rotateX(60deg);
+    -moz-transform: perspective(600px) rotateX(60deg);
+    -ms-transform: perspective(600px) rotateX(60deg);
+    -o-transform: perspective(600px) rotateX(60deg);
+    transform: perspective(600px) rotateX(60deg);
+}
+
+.hex:before {
+    float: left;
+    content: " ";
+    width:0;
+    border-top: 52px solid transparent;
+    border-bottom: 52px solid transparent;
+    position: relative;
+    left: -30px;
+    transition: all 2.0s linear;
+}
+
+.hex {
+    margin-right: -26px;
+    margin-bottom: -50px;
+    float: left;
+    margin-left: 30px;
+    width: 60px;
+    height: 104px;
+    position: relative;
+    -webkit-transform: rotateY(-360deg); transform-style: preserve-3d; transition: all 2.0s linear;
+}
+
+.hex:after {
+    float: right;
+    content: "";
+    position: relative;
+    border-left: 30px solid;
+    border-top: 52px solid transparent;
+    border-bottom: 52px solid transparent;
+    left: 30px;
+    transition: all 2.0s linear;
+}
+
+.hex-row {
+    margin-right: 96px;
+}
+
+.even { clear: left; margin-top: 2px; margin-left: 93px;}
+.even .hex {
+    margin-right: 96px;
+}
+
+
+
+
+
+
