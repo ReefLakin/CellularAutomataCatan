@@ -18,6 +18,9 @@ A landmass generator for Catan Seafarers, using elementary cellular automation.
 - [About](#About)
     - [Wolfram Rules Examples](#Rule-30)
     - [Rule 153 in Action](#Rule-153-In-Action)
+- [Contribute](#Contribute)
+- [Changelog](#Changelog)
+    - [The Stylish Update](#The-Stylish-Update)
 - [FAQs](#FAQs)
 
 <br>
@@ -83,10 +86,51 @@ You can spend fifteen minutes sketching the hexagons and colouring them in like 
 
 <br>
 
+:octocat:
+## Contribute
+
+The most straight forward way to change something about the website is to request it. You can do so by reaching out to me at *reeflakin2@gmail.com*. I will try to respond as early as possible. I welcome suggestions about ways to improve the site, of course, but any other inquiry is acceptable.
+
+Failing this, take matters into your own hands by forking the repo and mucking about yourself.
+
+<br>
+
+---
+
+<br>
+
+:calendar:
+## Changelog
+
+Not all updates are shown here, only the most recent ones.
+
+### The Stylish Update (XX/XX/XXXX)
+
+#### Planned:
+
+- Add navigation bar.
+- Make site logo.
+- Add form styling.
+- Make the map look nicer on the web page.
+- Add a footer.
+- Add a "Randomize" button.
+
+#### Documentation:
+
+- Added a "Changelog" section.
+- Added a "Contribute" section, with details on how one may contribute to the site.
+- Added 1 new FAQ.
+
+<br>
+
+---
+
+<br>
+
 :question:
 ## FAQs
 
-If you have a question that is yet to be answered, reach out to me at *reef.lakin@students.plymouth.ac.uk* and I will add it below.
+If you have a question that is yet to be answered, reach out to me at *reeflakin2@gmail.com* and I will add it below.
 
 <br>
 
@@ -99,3 +143,9 @@ This refers to the middle hexagon at both the base and top of the board. In fact
 > ### Why did you include that imaginary column of hexagons to the right of the main board?
 
 This was a design choice. Only later in development did I realise I probably could have done without it, but it stuck with me and I continued using it for the rest of the project.
+
+<br>
+
+> ### Will you add a dark mode?
+
+Err, no. Unpopular opinion: dark mode is overrated. Sorry, bro.
