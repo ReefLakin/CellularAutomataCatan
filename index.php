@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="styles/bootstrap.css">
 
     <!-- Title -->
     <title>Cellular Automata Catan</title>
@@ -121,19 +124,60 @@
 </head>
 <body>
 
-<!-- Hex Layout is Stolen from the legend that is MattH22: https://codepen.io/MattH22/pen/pqFLJ -->
+<!-- Navigation Menu -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">catantools.co.uk</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link" href="#">Tools</a>
+                <a class="nav-link" href="https://github.com/ReefLakin/CellularAutomataCatan">View On GitHub</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<script>
+    function randomize() {
+        document.getElementById("init").value = Math.floor(Math.random() * 256);
+        document.getElementById("rule").value = Math.floor(Math.random() * 256);
+    }
+</script>
 
 
-<form method="get" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-    <label for="init">Initial Activated Cells:</label><br>
-    <input type="text" id="init" name="init"><br>
-    <label for="rule">Wolfram CA Rule:</label><br>
-    <input type="text" id="rule" name="rule">
-    <input type="submit" value="Generate">
-    <input type="reset" value="Clear">
-</form>
+<div class="container-fluid bg-light" style="text-align: center; padding: 30px">
+    <form method="get" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+        <div class="row">
+            <div class="col">
+                <label for="init" class="form-label">Initial Activated Cells:</label><br>
+                <input type="text" class="form-control" id="init" name="init"><br>
+            </div>
+            <div class="col">
+                <label for="rule" class="form-label">Wolfram CA Rule:</label><br>
+                <input type="text" class="form-control" id="rule" name="rule">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button type="submit" class="btn btn-success">Submit</button>
+                <button type="reset" class="btn btn-danger">Clear</button>
+                <button type="button" onclick="randomize()" class="btn btn-warning">Randomize</button>
+            </div>
+        </div>
+    </form>
+</div>
 
-<br><br>
+
+
+
+<div class="container-fluid bg-dark">
+
+</div>
+
 
 
 <?php
@@ -273,7 +317,8 @@ for ($rows = 1; $rows < 8; $rows++) {
 
 
 // Visualise the results with HTML, CSS and PHP; front-end part.
-echo '<div id="hexe">';
+echo '<div class="container-fluid bg-dark" style="padding-bottom: 150px; padding-top: 50px; text-align: center">';
+echo '    <div id="hexe">';
 
 for ($rows = 0; $rows < 8; $rows++) {
     for ($cols = 0; $cols < 8; $cols = $cols + 2) {
@@ -289,26 +334,26 @@ for ($rows = 0; $rows < 8; $rows++) {
             ($rows == 7 && $cols == 6)
         ) {
             if ($cells[$rows][$cols] == 1) {
-                echo '        <div class="hex hex-row imag-alive"></div>';
+                echo '            <div class="hex hex-row imag-alive"></div>';
             }
             else {
-                echo '        <div class="hex hex-row imag-dead"></div>';
+                echo '            <div class="hex hex-row imag-dead"></div>';
             }
         }
         else {
             if ($cells[$rows][$cols] == 1) {
-                echo '    <div class="hex hex-row real-alive"></div>';
+                echo '        <div class="hex hex-row real-alive"></div>';
             }
             else {
-                echo '    <div class="hex hex-row real-dead"></div>';
+                echo '        <div class="hex hex-row real-dead"></div>';
             }
         }
 
 
 
     }
-    echo '    <br />';
-    echo '    <div class="even">';
+    echo '        <br />';
+    echo '        <div class="even">';
     for ($cols = 1; $cols < 8; $cols = $cols + 2) {
 
         if (
@@ -326,27 +371,28 @@ for ($rows = 0; $rows < 8; $rows++) {
                 ($rows == 7 && $cols == 7)
         ) {
             if ($cells[$rows][$cols] == 1) {
-                echo '        <div class="hex hex-row imag-alive"></div>';
+                echo '            <div class="hex hex-row imag-alive"></div>';
             }
             else {
-                echo '        <div class="hex hex-row imag-dead"></div>';
+                echo '            <div class="hex hex-row imag-dead"></div>';
             }
         }
 
         else {
             if ($cells[$rows][$cols] == 1) {
-                echo '        <div class="hex hex-row real-alive"></div>';
+                echo '            <div class="hex hex-row real-alive"></div>';
             }
             else {
-                echo '        <div class="hex hex-row real-dead"></div>';
+                echo '            <div class="hex hex-row real-dead"></div>';
             }
         }
 
 
     }
-    echo '    </div>';
+    echo '        </div>';
 }
 
+echo '    </div>';
 echo '</div>';
 
 
@@ -355,94 +401,7 @@ echo '</div>';
 ?>
 
 
-
-<!--<div id="hexe">-->
-<!--    <div class="hex hex-row real-alive"></div>-->
-<!--    <div class="hex hex-row"></div>-->
-<!--    <div class="hex hex-row"></div>-->
-<!--    <div class="hex hex-row"></div><br />-->
-<!--    <div class="even">-->
-<!--        <div class="hex hex-row"></div>-->
-<!--        <div class="hex hex-row"></div>-->
-<!--        <div class="hex hex-row"></div>-->
-<!--        <div class="hex hex-row"></div>-->
-<!--    </div>-->
-<!--    <div class="hex hex-row"></div>-->
-<!--    <div class="hex hex-row"></div>-->
-<!--    <div class="hex hex-row"></div>-->
-<!--    <div class="hex hex-row"></div>-->
-<!--    <div class="even">-->
-<!--        <div class="hex"></div>-->
-<!--        <div class="hex"></div>-->
-<!--        <div class="hex"></div>-->
-<!--        <div class="hex"></div>-->
-<!--    </div>-->
-<!--    <div class="hex hex-row"></div>-->
-<!--    <div class="hex hex-row"></div>-->
-<!--    <div class="hex hex-row"></div>-->
-<!--    <div class="hex hex-row"></div>-->
-<!--    <div class="even">-->
-<!--        <div class="hex hex-row"></div>-->
-<!--        <div class="hex hex-row"></div>-->
-<!--        <div class="hex hex-row"></div>-->
-<!--        <div class="hex hex-row"></div>-->
-<!--    </div>-->
-<!--    <div class="hex hex-row"></div>-->
-<!--    <div class="hex hex-row"></div>-->
-<!--    <div class="hex hex-row"></div>-->
-<!--    <div class="hex hex-row"></div>-->
-<!--    <div class="even">-->
-<!--        <div class="hex"></div>-->
-<!--        <div class="hex"></div>-->
-<!--        <div class="hex"></div>-->
-<!--        <div class="hex"></div>-->
-<!--    </div>-->
-<!--    <div class="hex hex-row"></div>-->
-<!--    <div class="hex hex-row"></div>-->
-<!--    <div class="hex hex-row"></div>-->
-<!--    <div class="hex hex-row"></div>-->
-<!--    <div class="even">-->
-<!--        <div class="hex hex-row"></div>-->
-<!--        <div class="hex hex-row"></div>-->
-<!--        <div class="hex hex-row"></div>-->
-<!--        <div class="hex hex-row"></div>-->
-<!--    </div>-->
-<!--    <div class="hex hex-row"></div>-->
-<!--    <div class="hex hex-row"></div>-->
-<!--    <div class="hex hex-row"></div>-->
-<!--    <div class="hex hex-row"></div>-->
-<!--    <div class="even">-->
-<!--        <div class="hex"></div>-->
-<!--        <div class="hex"></div>-->
-<!--        <div class="hex"></div>-->
-<!--        <div class="hex"></div>-->
-<!--    </div>-->
-<!--    <div class="hex hex-row"></div>-->
-<!--    <div class="hex hex-row"></div>-->
-<!--    <div class="hex hex-row"></div>-->
-<!--    <div class="hex hex-row"></div>-->
-<!--    <div class="even">-->
-<!--        <div class="hex"></div>-->
-<!--        <div class="hex"></div>-->
-<!--        <div class="hex"></div>-->
-<!--        <div class="hex"></div>-->
-<!--    </div>-->
-<!--    <div class="hex hex-row"></div>-->
-<!--    <div class="hex hex-row"></div>-->
-<!--    <div class="hex hex-row"></div>-->
-<!--    <div class="hex hex-row"></div>-->
-<!--    <div class="even">-->
-<!--        <div class="hex"></div>-->
-<!--        <div class="hex"></div>-->
-<!--        <div class="hex"></div>-->
-<!--        <div class="hex"></div>-->
-<!--    </div>-->
-<!--</div>-->
-
-
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
 </body>
 </html>

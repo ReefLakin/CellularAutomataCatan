@@ -108,18 +108,22 @@ Not all updates are shown here, only the most recent ones.
 
 #### Planned:
 
-- Add navigation bar.
 - Make site logo.
-- Add form styling.
-- Make the map look nicer on the web page.
 - Add a footer.
-- Add a "Randomize" button.
+
+#### Features:
+
+- Added a navigation bar in preparation for a multi-page site.
+- Added form styling.
+- Added "Randomize" button.
+- Added more styling to map section.
 
 #### Documentation:
 
 - Added a "Changelog" section.
 - Added a "Contribute" section, with details on how one may contribute to the site.
-- Added 1 new FAQ.
+- Added a "Special Thanks" section, appreciating the resources deserving of recognition.
+- Added 2 new FAQs.
 
 <br>
 
@@ -149,3 +153,20 @@ This was a design choice. Only later in development did I realise I probably cou
 > ### Will you add a dark mode?
 
 Err, no. Unpopular opinion: dark mode is overrated. Sorry, bro.
+
+<br>
+
+> ### What are the best Rules to use for this?
+
+60 and 153 are pretty wonderful. They can makes some great islands, especially 60! I will update the answer to this question when more of my favourites surface.
+
+<br>
+
+---
+
+<br>
+
+:pray:
+## Special Thanks
+
+The hexagon layout was stolen from the legend that is MattH22: https://codepen.io/MattH22/pen/pqFLJ. Thanks, man, this saved me a lot of effort.
