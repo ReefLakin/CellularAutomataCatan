@@ -104,11 +104,7 @@ Failing this, take matters into your own hands by forking the repo and mucking a
 
 Not all updates are shown here, only the most recent ones.
 
-### The Stylish Update (XX/XX/XXXX)
-
-#### Planned:
-
-- Add a footer.
+### The Stylish Update (27/03/21)
 
 #### Features:
 
@@ -117,6 +113,7 @@ Not all updates are shown here, only the most recent ones.
 - Added "Randomize" button.
 - Added more styling to map section.
 - Added site logo.
+- Added footer.
 
 #### Documentation:
 
