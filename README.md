@@ -108,7 +108,6 @@ Not all updates are shown here, only the most recent ones.
 
 #### Planned:
 
-- Make site logo.
 - Add a footer.
 
 #### Features:
@@ -117,6 +116,7 @@ Not all updates are shown here, only the most recent ones.
 - Added form styling.
 - Added "Randomize" button.
 - Added more styling to map section.
+- Added site logo.
 
 #### Documentation:
 
@@ -152,13 +152,13 @@ This was a design choice. Only later in development did I realise I probably cou
 
 > ### Will you add a dark mode?
 
-Err, no. Unpopular opinion: dark mode is overrated. Sorry, bro.
+Unpopular opinion: dark mode is overrated. But I'd consider it if there was a demand.
 
 <br>
 
 > ### What are the best Rules to use for this?
 
-60 and 153 are pretty wonderful. They can makes some great islands, especially 60! I will update the answer to this question when more of my favourites surface.
+Consider some of my personal favourites: 25, 60, 61, 73, 101, 105 and 153; they make some pretty sweet maps!
 
 <br>
 
@@ -169,4 +169,6 @@ Err, no. Unpopular opinion: dark mode is overrated. Sorry, bro.
 :pray:
 ## Special Thanks
 
-The hexagon layout was stolen from the legend that is MattH22: https://codepen.io/MattH22/pen/pqFLJ. Thanks, man, this saved me a lot of effort.
+The hexagon layout was stolen from the legend that is MattH22: https://codepen.io/MattH22/pen/pqFLJ. Thanks you!
+
+Betheny Waygood is the gal behind the site's logo. Check her out on Instagram: https://www.instagram.com/bwaygood_art/.
