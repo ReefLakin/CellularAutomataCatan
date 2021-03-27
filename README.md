@@ -18,6 +18,9 @@ A landmass generator for Catan Seafarers, using elementary cellular automation.
 - [About](#About)
     - [Wolfram Rules Examples](#Rule-30)
     - [Rule 153 in Action](#Rule-153-In-Action)
+- [Contribute](#Contribute)
+- [Changelog](#Changelog)
+    - [The Stylish Update](#The-Stylish-Update)
 - [FAQs](#FAQs)
 
 <br>
@@ -83,10 +86,52 @@ You can spend fifteen minutes sketching the hexagons and colouring them in like 
 
 <br>
 
+:octocat:
+## Contribute
+
+The most straight forward way to change something about the website is to request it. You can do so by reaching out to me at *reeflakin2@gmail.com*. I will try to respond as early as possible. I welcome suggestions about ways to improve the site, of course, but any other inquiry is acceptable.
+
+Failing this, take matters into your own hands by forking the repo and mucking about yourself.
+
+<br>
+
+---
+
+<br>
+
+:calendar:
+## Changelog
+
+Not all updates are shown here, only the most recent ones.
+
+### The Stylish Update (27/03/21)
+
+#### Features:
+
+- Added a navigation bar in preparation for a multi-page site.
+- Added form styling.
+- Added "Randomize" button.
+- Added more styling to map section.
+- Added site logo.
+- Added footer.
+
+#### Documentation:
+
+- Added a "Changelog" section.
+- Added a "Contribute" section, with details on how one may contribute to the site.
+- Added a "Special Thanks" section, appreciating the resources deserving of recognition.
+- Added 2 new FAQs.
+
+<br>
+
+---
+
+<br>
+
 :question:
 ## FAQs
 
-If you have a question that is yet to be answered, reach out to me at *reef.lakin@students.plymouth.ac.uk* and I will add it below.
+If you have a question that is yet to be answered, reach out to me at *reeflakin2@gmail.com* and I will add it below.
 
 <br>
 
@@ -99,3 +144,28 @@ This refers to the middle hexagon at both the base and top of the board. In fact
 > ### Why did you include that imaginary column of hexagons to the right of the main board?
 
 This was a design choice. Only later in development did I realise I probably could have done without it, but it stuck with me and I continued using it for the rest of the project.
+
+<br>
+
+> ### Will you add a dark mode?
+
+Unpopular opinion: dark mode is overrated. But I'd consider it if there was a demand.
+
+<br>
+
+> ### What are the best Rules to use for this?
+
+Consider some of my personal favourites: 25, 60, 61, 73, 101, 105 and 153; they make some pretty sweet maps!
+
+<br>
+
+---
+
+<br>
+
+:pray:
+## Special Thanks
+
+The hexagon layout was stolen from the legend that is MattH22: https://codepen.io/MattH22/pen/pqFLJ. Thanks you!
+
+Betheny Waygood is the gal behind the site's logo. Check her out on Instagram: https://www.instagram.com/bwaygood_art/.
