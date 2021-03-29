@@ -8,16 +8,6 @@ A landmass generator for Catan Seafarers, using elementary cellular automation.
 
 <br>
 
-## Website
-
-https://catantools.co.uk/
-
-<br>
-
----
-
-<br>
-
 ## Navigation
 
 <br>
@@ -27,8 +17,8 @@ https://catantools.co.uk/
     - [Rule 153 in Action](#Rule-153-In-Action)
 - [Contribute](#Contribute)
 - [Changelog](#Changelog)
-    - [The Mobile Patch](#The-Mobile-Patch-(XX/XX/XXXX))
-    - [The Stylish Update](#The-Stylish-Update-(27/03/2021))
+    - [The Mobile Patch](#The-Mobile-Patch)
+    - [The Stylish Update](#The-Stylish-Update)
 - [FAQs](#FAQs)
 
 <br>
@@ -109,7 +99,7 @@ Failing this, take matters into your own hands by forking the repo and mucking a
 
 Not all updates are shown here, only the most recent ones.
 
-### The Mobile Patch (XX/XX/XXXX)
+### The Mobile Patch
 
 #### Planned:
 
@@ -119,14 +109,13 @@ Not all updates are shown here, only the most recent ones.
 
 #### Documentation:
 
-- Added a "Website" section at the very top.
 - Restyled some of the README.
 
 <br>
 
-### The Stylish Update (27/03/2021)
+### The Stylish Update
 
-Previously, my site was a akin to a barren desert, void of colour and sex appeal. Now, we have a splash of style and it's looking pretty nice. Enjoy!
+Implemented **27/03/2021**. Previously, my site was a akin to a barren desert, void of colour and sex appeal. Now, we have a splash of style and it's looking pretty nice. Enjoy!
 
 #### Features:
 
