@@ -171,6 +171,12 @@
                 <button type="button" onclick="randomize()" class="btn btn-warning">Randomize</button>
             </div>
         </div>
+        <br>
+        <div class="row">
+            <div class="alert alert-danger" role="alert">
+                This page is from an old version of the site and is no longer being updated.
+            </div>
+        </div>
     </form>
 </div>
 
