@@ -14,7 +14,7 @@ A landmass generator for Catan Seafarers, using elementary cellular automation.
 
 - [About](#About)
     - [Wolfram Rules Examples](#Rule-30)
-    - [Rule 153 in Action](#Rule-153-In-Action)
+    - [Rule 153 Example](#Rule-153-In-Action)
 - [Contribute](#Contribute)
 - [Changelog](#Changelog)
     - [The Mobile Patch](#The-Mobile-Patch)
@@ -103,13 +103,21 @@ Not all updates are shown here, only the most recent ones.
 
 #### Planned:
 
-- Replace the current hex grid setup with a responsive one for mobile users.
 - Provide more useful information to accompany the forms.
 - Form boxes remain filled when "Submit" button is pressed.
+
+#### Features:
+
+- Reworked the hex grid so it is easier to manipulate and looks better on mobile.
+
+#### Changes:
+
+- Moved the old website to a new navigation tab named "Deprecated Generator".
 
 #### Documentation:
 
 - Restyled some of the README.
+- Added more attribution.
 
 <br>
 
@@ -175,6 +183,24 @@ Consider some of my personal favourites: 25, 60, 61, 73, 101, 105 and 153; they 
 
 ## Special Thanks
 
+### Vincent Martin
+
+> https://github.com/vmcreative/Hexi-Flexi-Grid
+
+I ripped all the hexagon code from one of Vincent's GitHub repositories, that has been aptly titled Hexi-Flexi Grid. Great work!
+
+### Bootstrap
+
+> https://getbootstrap.com/
+
+Classic, I'm sure you'll agree. Check them out in the link above.
+
+### Thomas Park
+
+> https://github.com/thomaspark/bootswatch
+
+Big thanks to Thomas and the 70+ other contributers for making Bootswatch this guy's go-to for sexy styling.
+
 ### Betheny Waygood
 
 > https://www.instagram.com/bwaygood_art/
@@ -185,4 +211,4 @@ Betheny Waygood is the gal behind the site's logo. Check her out on Instagram in
 
 > https://codepen.io/MattH22/pen/pqFLJ
 
-The hexagon grid was stolen from the legend that is Matt. You can check out his code in the link above!
+The previous hexagon grid was stolen from the legend that is Matt. You can check out his code in the link above!
