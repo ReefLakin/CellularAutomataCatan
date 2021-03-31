@@ -8,34 +8,115 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="styles/bootstrap.css">
 
-    <link href="style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="styles/bootstrap.css">
 
     <!-- Title -->
     <title>Cellular Automata Catan</title>
 
     <style>
 
+
+        /* Removed from .css file due to it causing some problems. */
+        body {   }
+        #hexe { width: 900px; }
+        #hexes {
+            -webkit-transform: perspective(600px) rotateX(60deg);
+            -moz-transform: perspective(600px) rotateX(60deg);
+            -ms-transform: perspective(600px) rotateX(60deg);
+            -o-transform: perspective(600px) rotateX(60deg);
+            transform: perspective(600px) rotateX(60deg);
+        }
+
+        .hex:before {
+            float: left;
+            content: " ";
+            width:0;
+            border-right: 30px solid #559CD4;
+            border-top: 52px solid transparent;
+            border-bottom: 52px solid transparent;
+            position: relative;
+            left: -30px;
+            transition: all 2.0s linear;
+        }
+
+        .hex {
+            margin-right: -26px;
+            margin-bottom: -50px;
+            float: left;
+            margin-left: 30px;
+            width: 60px;
+            height: 104px;
+            background-color: #559CD4;
+            position: relative;
+            -webkit-transform: rotateY(-360deg); transform-style: preserve-3d; transition: all 2.0s linear;
+        }
+
+        .hex:after {
+            float: right;
+            content: "";
+            position: relative;
+            border-left: 30px solid #559CD4;
+            border-top: 52px solid transparent;
+            border-bottom: 52px solid transparent;
+            left: 30px;
+            transition: all 2.0s linear;
+        }
+
+        .hex-row {
+            margin-right: 96px;
+        }
+
+        .even { clear: left; margin-top: 2px; margin-left: 93px;}
+        .even .hex {
+            margin-right: 96px;
+        }
+
+
+
+
+
+
         /* Styling used for the coloured tiles. */
-
-        .real-dead {
-            background-color: #8be2ef;
+        .imag-dead:before {
+            border-right-color: #bdbfba;
         }
-
-        .real-alive {
-            background-color: #70e30a;
-        }
-
         .imag-dead {
             background-color: #bdbfba;
         }
+        .imag-dead:after {
+            border-left-color: #bdbfba;
+        }
 
+        .imag-alive:before {
+            border-right-color: #6a6e63;
+        }
         .imag-alive {
             background-color: #6a6e63;
+        }
+        .imag-alive:after {
+            border-left-color: #6a6e63;
+        }
 
+        .real-dead:before {
+            border-right-color: #8be2ef;
+        }
+        .real-dead {
+            background-color: #8be2ef;
+        }
+        .real-dead:after {
+            border-left-color: #8be2ef;
+        }
 
-
+        .real-alive:before {
+            border-right-color: #70e30a;
+        }
+        .real-alive {
+            background-color: #70e30a;
+        }
+        .real-alive:after {
+            border-left-color: #70e30a;
+        }
 
 
     </style>
@@ -55,8 +136,8 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-link active" aria-current="page" href="#">New Generator</a>
-                <a class="nav-link" href="deprecated.php">Deprecated Generator</a>
+                <a class="nav-link" href="index.php">New Generator</a>
+                <a class="nav-link active" aria-current="page" href="deprecated.php">Deprecated Generator</a>
                 <a class="nav-link" href="https://github.com/ReefLakin/CellularAutomataCatan">View On GitHub</a>
             </div>
         </div>
@@ -96,12 +177,11 @@
 
 
 
+<div class="container-fluid bg-dark">
+
+</div>
 
 
-<div class="container-fluid bg-dark" style="padding-top: 3%; padding-bottom: 3%;">
-    <div id="hexGrid">
-        <div class="hexCrop">
-            <div class="hexGrid">
 
 <?php
 
@@ -240,8 +320,11 @@ for ($rows = 1; $rows < 8; $rows++) {
 
 
 // Visualise the results with HTML, CSS and PHP; front-end part.
+echo '<div class="container-fluid bg-dark" style="padding-bottom: 150px; padding-top: 50px; text-align: center">';
+echo '    <div id="hexe">';
+
 for ($rows = 0; $rows < 8; $rows++) {
-    for ($cols = 0; $cols < 8; $cols++) {
+    for ($cols = 0; $cols < 8; $cols = $cols + 2) {
 
         if (
             ($rows == 0 && $cols == 0) ||
@@ -251,7 +334,32 @@ for ($rows = 0; $rows < 8; $rows++) {
             ($rows == 1 && $cols == 0) ||
             ($rows == 1 && $cols == 6) ||
             ($rows == 7 && $cols == 0) ||
-            ($rows == 7 && $cols == 6) ||
+            ($rows == 7 && $cols == 6)
+        ) {
+            if ($cells[$rows][$cols] == 1) {
+                echo '            <div class="hex hex-row imag-alive"></div>';
+            }
+            else {
+                echo '            <div class="hex hex-row imag-dead"></div>';
+            }
+        }
+        else {
+            if ($cells[$rows][$cols] == 1) {
+                echo '        <div class="hex hex-row real-alive"></div>';
+            }
+            else {
+                echo '        <div class="hex hex-row real-dead"></div>';
+            }
+        }
+
+
+
+    }
+    echo '        <br />';
+    echo '        <div class="even">';
+    for ($cols = 1; $cols < 8; $cols = $cols + 2) {
+
+        if (
             ($rows == 0 && $cols == 1) ||
             ($rows == 0 && $cols == 5) ||
             ($rows == 0 && $cols == 7) ||
@@ -266,28 +374,34 @@ for ($rows = 0; $rows < 8; $rows++) {
             ($rows == 7 && $cols == 7)
         ) {
             if ($cells[$rows][$cols] == 1) {
-                echo '<div class="hex imag-alive"></div>';
+                echo '            <div class="hex hex-row imag-alive"></div>';
             }
             else {
-                echo '<div class="hex imag-dead"></div>';
+                echo '            <div class="hex hex-row imag-dead"></div>';
             }
         }
+
         else {
             if ($cells[$rows][$cols] == 1) {
-                echo '<div class="hex real-alive"></div>';
+                echo '            <div class="hex hex-row real-alive"></div>';
             }
             else {
-                echo '<div class="hex real-dead"></div>';
+                echo '            <div class="hex hex-row real-dead"></div>';
             }
         }
-    }
-}
-?>
 
-            </div>
-        </div>
-    </div>
-</div>
+
+    }
+    echo '        </div>';
+}
+
+echo '    </div>';
+echo '</div>';
+
+
+
+
+?>
 
 
 <div class="container-fluid bg-light">
