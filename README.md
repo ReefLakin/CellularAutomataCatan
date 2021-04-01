@@ -123,7 +123,7 @@ Not all updates are shown here, only the most recent ones.
 
 ### The Stylish Update
 
-Implemented **27/03/2021**. Previously, my site was a akin to a barren desert, void of colour and sex appeal. Now, we have a splash of style and it's looking pretty nice. Enjoy!
+Implemented **27/03/2021**. Previously, my site was akin to a barren desert, void of colour and sex appeal. Now, we have a splash of style and it's looking pretty nice. Enjoy!
 
 #### Features:
 

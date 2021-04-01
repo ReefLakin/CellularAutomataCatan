@@ -76,11 +76,11 @@
         <div class="row">
             <div class="col">
                 <label for="init" class="form-label">Initial Activated Cells:</label><br>
-                <input type="text" class="form-control" id="init" name="init"><br>
+                <input type="text" class="form-control" id="init" name="init" value="<?php if (!empty($_GET["init"])) {echo $_GET["init"];} ?>"><br>
             </div>
             <div class="col">
                 <label for="rule" class="form-label">Wolfram CA Rule:</label><br>
-                <input type="text" class="form-control" id="rule" name="rule">
+                <input type="text" class="form-control" id="rule" name="rule" value="<?php if (!empty($_GET["rule"])) {echo $_GET["rule"];} ?>">
             </div>
         </div>
         <div class="row">
@@ -92,6 +92,7 @@
         </div>
     </form>
 </div>
+
 
 
 
