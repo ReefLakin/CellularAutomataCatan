@@ -55,7 +55,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-link active" aria-current="page" href="#">New Generator</a>
+                <a class="nav-link active" aria-current="page" href="#">Landmass Generator<span class="badge badge-secondary" style="margin-left: 5px">New</span></a>
                 <a class="nav-link" href="deprecated.php">Deprecated Generator</a>
                 <a class="nav-link" href="https://github.com/ReefLakin/CellularAutomataCatan">View On GitHub</a>
             </div>
@@ -68,26 +68,31 @@
         document.getElementById("init").value = Math.floor(Math.random() * 256);
         document.getElementById("rule").value = Math.floor(Math.random() * 256);
     }
+
+    function clearForms() {
+        document.getElementById("init").value = "";
+        document.getElementById("rule").value = "";
+    }
 </script>
 
 
 <div class="container-fluid bg-light" style="text-align: center; padding: 30px">
     <form method="get" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
         <div class="row">
-            <div class="col">
-                <label for="init" class="form-label">Initial Activated Cells:</label><br>
-                <input type="text" class="form-control" id="init" name="init" value="<?php if (!empty($_GET["init"])) {echo $_GET["init"];} ?>"><br>
-            </div>
-            <div class="col">
-                <label for="rule" class="form-label">Wolfram CA Rule:</label><br>
-                <input type="text" class="form-control" id="rule" name="rule" value="<?php if (!empty($_GET["rule"])) {echo $_GET["rule"];} ?>">
-            </div>
+            <label for="init" class="form-label">Enter denary value of starting cells:</label><br>
+            <input type="text" class="form-control" id="init" name="init" placeholder="1-255" value="<?php if (!empty($_GET["init"])) {echo $_GET["init"];} ?>"><br>
         </div>
+        <br>
+        <div class="row">
+            <label for="rule" class="form-label">Enter your Wolfram rule:</label><br>
+            <input type="text" class="form-control" id="rule" name="rule" placeholder="1-255" value="<?php if (!empty($_GET["rule"])) {echo $_GET["rule"];} ?>">
+        </div>
+        <br>
         <div class="row">
             <div class="col">
-                <button type="submit" class="btn btn-success">Submit</button>
-                <button type="reset" class="btn btn-danger">Clear</button>
-                <button type="button" onclick="randomize()" class="btn btn-warning">Randomize</button>
+                <button type="submit" class="btn btn-dark" style="margin: 6px">Submit</button>
+                <button type="button" onclick="clearForms()" class="btn btn-dark" style="margin: 6px">Clear</button>
+                <button type="button" onclick="randomize()" class="btn btn-dark" style="margin: 6px">Randomize</button>
             </div>
         </div>
     </form>
