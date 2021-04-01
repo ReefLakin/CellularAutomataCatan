@@ -2,26 +2,30 @@
 
 A landmass generator for Catan Seafarers, using elementary cellular automation.
 
-## catantools.co.uk
-
 <br>
 
 ---
 
 <br>
 
-:bookmark_tabs: 
 ## Navigation
 
 <br>
 
 - [About](#About)
     - [Wolfram Rules Examples](#Rule-30)
-    - [Rule 153 in Action](#Rule-153-In-Action)
+    - [Rule 153 Example](#Rule-153-In-Action)
 - [Contribute](#Contribute)
 - [Changelog](#Changelog)
+    - [The Mobile Patch](#The-Mobile-Patch)
     - [The Stylish Update](#The-Stylish-Update)
 - [FAQs](#FAQs)
+- [Special Thanks](#Special-Thanks)
+    - [Hexagon Grid](#Vincent-Martin)
+    - [Bootstrap](#Bootstrap)
+    - [Bootswatch](#Thomas-Park)
+    - [Artwork](#Betheny-Waygood)
+    - [Old Hex Grid](#MattH22)
 
 <br>
 
@@ -29,7 +33,6 @@ A landmass generator for Catan Seafarers, using elementary cellular automation.
 
 <br>
 
-:bulb:
 ## About
 
 Randomly generating your map with Catan's original board is simple: shuffle the tiles and the little numbered circles, and get to work scattering them across your world with little effort or premeditated design. The resulting tile arrangement should be unique and hopefully provide you with yet another interesting game. Of course, players are welcome to design their maps however they wish. But it is far more interesting to throw them down into a random arrangement that nobody can be prepared for.
@@ -86,7 +89,6 @@ You can spend fifteen minutes sketching the hexagons and colouring them in like 
 
 <br>
 
-:octocat:
 ## Contribute
 
 The most straight forward way to change something about the website is to request it. You can do so by reaching out to me at *reeflakin2@gmail.com*. I will try to respond as early as possible. I welcome suggestions about ways to improve the site, of course, but any other inquiry is acceptable.
@@ -99,12 +101,34 @@ Failing this, take matters into your own hands by forking the repo and mucking a
 
 <br>
 
-:calendar:
 ## Changelog
 
 Not all updates are shown here, only the most recent ones.
 
-### The Stylish Update (27/03/21)
+### The Mobile Patch
+
+Implemented **01/04/2021**. Out with the old, in with the slick new mobile-friendly version. Unfortunately, doesn't look as nice on desktop anymore. Will fix in the future, fear not.
+
+#### Features:
+
+- Reworked the hex grid so it is easier to manipulate and looks better on mobile.
+
+#### Changes:
+
+- Moved the old website to a new navigation tab named "Deprecated Generator".
+- Restyled the look of forms and buttons.
+- Form info is retained after page is reloaded.
+
+#### Documentation:
+
+- Restyled some of the README.
+- Added more attribution.
+
+<br>
+
+### The Stylish Update
+
+Implemented **27/03/2021**. Previously, my site was akin to a barren desert, void of colour and sex appeal. Now, we have a splash of style and it's looking pretty nice. Enjoy!
 
 #### Features:
 
@@ -128,7 +152,6 @@ Not all updates are shown here, only the most recent ones.
 
 <br>
 
-:question:
 ## FAQs
 
 If you have a question that is yet to be answered, reach out to me at *reeflakin2@gmail.com* and I will add it below.
@@ -163,9 +186,34 @@ Consider some of my personal favourites: 25, 60, 61, 73, 101, 105 and 153; they 
 
 <br>
 
-:pray:
 ## Special Thanks
 
-The hexagon layout was stolen from the legend that is MattH22: https://codepen.io/MattH22/pen/pqFLJ. Thanks you!
+### Vincent Martin
 
-Betheny Waygood is the gal behind the site's logo. Check her out on Instagram: https://www.instagram.com/bwaygood_art/.
+> https://github.com/vmcreative/Hexi-Flexi-Grid
+
+I ripped all the hexagon code from one of Vincent's GitHub repositories, that has been aptly titled Hexi-Flexi Grid. Great work!
+
+### Bootstrap
+
+> https://getbootstrap.com/
+
+Classic, I'm sure you'll agree. Check them out in the link above.
+
+### Thomas Park
+
+> https://github.com/thomaspark/bootswatch
+
+Big thanks to Thomas and the 70+ other contributers for making Bootswatch this guy's go-to for sexy styling.
+
+### Betheny Waygood
+
+> https://www.instagram.com/bwaygood_art/
+
+Betheny Waygood is the gal behind the site's logo. Check her out on Instagram in the link above. She does loads of great art; give her some love!
+
+### MattH22
+
+> https://codepen.io/MattH22/pen/pqFLJ
+
+The previous hexagon grid was stolen from the legend that is Matt. You can check out his code in the link above!
