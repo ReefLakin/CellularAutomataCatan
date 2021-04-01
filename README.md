@@ -20,6 +20,12 @@ A landmass generator for Catan Seafarers, using elementary cellular automation.
     - [The Mobile Patch](#The-Mobile-Patch)
     - [The Stylish Update](#The-Stylish-Update)
 - [FAQs](#FAQs)
+- [Special Thanks](#Special-Thanks)
+    - [Hexagon Grid](#Vincent-Martin)
+    - [Bootstrap](#Bootstrap)
+    - [Bootswatch](#Thomas-Park)
+    - [Artwork](#Betheny-Waygood)
+    - [Old Hex Grid](#MattH22)
 
 <br>
 
@@ -101,10 +107,7 @@ Not all updates are shown here, only the most recent ones.
 
 ### The Mobile Patch
 
-#### Planned:
-
-- Provide more useful information to accompany the forms.
-- Form boxes remain filled when "Submit" button is pressed.
+Implemented **01/04/2021**. Out with the old, in with the slick new mobile-friendly version. Unfortunately, doesn't look as nice on desktop anymore. Will fix in the future, fear not.
 
 #### Features:
 
@@ -113,6 +116,8 @@ Not all updates are shown here, only the most recent ones.
 #### Changes:
 
 - Moved the old website to a new navigation tab named "Deprecated Generator".
+- Restyled the look of forms and buttons.
+- Form info is retained after page is reloaded.
 
 #### Documentation:
 
