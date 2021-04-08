@@ -105,6 +105,16 @@ Failing this, take matters into your own hands by forking the repo and mucking a
 
 Not all updates are shown here, only the most recent ones.
 
+### The Unruly Update
+
+### Planned
+
+- Improve the navigation menu.
+- Add a House Rules Generator.
+- Refactor the whole project.
+
+<br>
+
 ### The Mobile Patch
 
 Implemented **01/04/2021**. Out with the old, in with the slick new mobile-friendly version. Unfortunately, doesn't look as nice on desktop anymore. Will fix in the future, fear not.
@@ -178,7 +188,7 @@ Unpopular opinion: dark mode is overrated. But I'd consider it if there was a de
 
 > ### What are the best Rules to use for this?
 
-Consider some of my personal favourites: 25, 60, 61, 73, 101, 105 and 153; they make some pretty sweet maps!
+Consider some of my personal favourites: 25, 60, 73, 101, 105, 147 and 153; they make some pretty sweet maps!
 
 <br>
 

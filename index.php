@@ -57,6 +57,7 @@
             <div class="navbar-nav">
                 <a class="nav-link active" aria-current="page" href="#">Landmass Generator<span class="badge badge-secondary" style="margin-left: 5px">New</span></a>
                 <a class="nav-link" href="deprecated.php">Deprecated Generator</a>
+                <a class="nav-link" href="house.php">House Rule Generator<span class="badge badge-secondary" style="margin-left: 5px">New</span></a>
                 <a class="nav-link" href="https://github.com/ReefLakin/CellularAutomataCatan">View On GitHub</a>
             </div>
         </div>
