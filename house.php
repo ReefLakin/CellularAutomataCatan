@@ -1,6 +1,12 @@
+<?php
+require 'Rule.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+
     <!-- Required Meta -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -41,7 +47,16 @@
 </nav>
 
 
-
+<div class="container-fluid bg-secondary" style="height: 90vh">
+<?php $rule = new Rule();
+    $rule->generateRule(1);
+    echo $rule->getTitle();
+    echo '<br>';
+    echo $rule->getText();
+    echo '<br>';
+    echo $rule->getIntensity();
+?>
+</div>
 
 
 
