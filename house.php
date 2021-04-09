@@ -49,7 +49,7 @@ require 'Rule.php';
 
 <div class="container-fluid bg-secondary" style="height: 90vh">
 <?php $rule = new Rule();
-    $rule->generateRule(1);
+    $rule->generateRule(2);
     echo $rule->getTitle();
     echo '<br>';
     echo $rule->getText();
