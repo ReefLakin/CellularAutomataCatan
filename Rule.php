@@ -33,19 +33,24 @@ class Rule
         $rulesMinor = array(
             "[title:Care Package]All players start with [number:2,5] [resources].",
             "[title:Deterrent]The robber starts on the [nice_terrain] tile with the best odds. Devise a fair way to choose if multiple tiles are tied for this title.",
-            "[title:Deserted]Place every desert tile available in the middle of the board to form one large desert area."
+            "[title:Deserted]Place every desert tile available in the middle of the board to form one large desert area.",
+            "[title:Pain Medicine]The first player to roll a twelve picks up an instant [resource] resource."
         );
 
         $rulesModerate = array(
             "[title:Pickpocketing Prowess]Steal two resources instead of one from a single adjacent player when you move the robber to a new tile.",
-            "[title:Roadless]When players build their first two settlements at the start of the game, they do not build any free roads branching off.",
+            "[title:Roadless]When players build their first free settlements at the start of the game, they do not build any free roads branching off.",
             "[title:Black Market Grains]At any time when a player is allowed to trade, they can exchange [number:4,6] [resources_excluding_grain] for [number:2,5] grain resources.",
-            "[title:City Planning]The first time a player builds a city, they draw a development card immediately."
+            "[title:City Planning]The first time a player builds a city, they draw a development card immediately.",
+            "[title:Docks Sabotage]The two-for-one [resource] port will be destroyed after [select_from:20,30,40,50,60] minutes of game time has elapsed. When destroyed, it is disabled.",
+            "[title:All-Seeing]Introducing: the Watchtower. Max one per player. Inherits most properties of settlements. Place the settlement piece on its end face so it's taller than it is wide. It doesn't generate resources. Cannot be upgraded. It costs [number:3,4] [select_from:ore,bricks,lumber] and a [select_from:grain,wool]. The robber cannot be placed on a tile with a Watchtower adjacent."
         );
 
         $rulesMajor = array(
             "[title:Coastal Champion]To win the game, players must have at least one [select_from:settlement,city] adjacent to water.",
-            "[title:Harsh Terrain]Cities cannot be built adjacent to [select_from:desert,mountain,goldmine] terrain tiles."
+            "[title:Harsh Terrain]Cities cannot be built adjacent to [select_from:desert,mountain,goldmine] terrain tiles.",
+            "[title:Thievery For Hire]Players can sacrifice the rest of their turn and expend [number:3,6] [resources] to move the robber at the very start of their turn (prior to rolling).",
+            "[title:City Life]Usually, players build two free settlements and roads anywhere at the start of the game. Instead, these are replaced with a single city and [number:2,4] roads."
         );
 
         $index = 0;
@@ -126,6 +131,10 @@ class Rule
             $options = explode(",", $new[1]);
             $selection = array_rand($options);
             $this->text = $this->text . $options[$selection];
+        }
+        elseif ($new[0] == "resource") {
+            $options = array("brick", "lumber", "wool", "grain", "ore");
+            $this->text = $this->text . $options[rand(0, 4)];
         }
 
     }
