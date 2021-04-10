@@ -30,6 +30,7 @@ class Rule
     // Random rule retrieval.
     private function getRule($scale) {
 
+        // 4 Rules
         $rulesMinor = array(
             "[title:Care Package]All players start with [number:2,5] [resources].",
             "[title:Deterrent]The robber starts on the [nice_terrain] tile with the best odds. Devise a fair way to choose if multiple tiles are tied for this title.",
@@ -37,6 +38,7 @@ class Rule
             "[title:Pain Medicine]The first player to roll a twelve picks up an instant [resource] resource."
         );
 
+        // 6 Rules
         $rulesModerate = array(
             "[title:Pickpocketing Prowess]Steal two resources instead of one from a single adjacent player when you move the robber to a new tile.",
             "[title:Roadless]When players build their first free settlements at the start of the game, they do not build any free roads branching off.",
@@ -46,6 +48,7 @@ class Rule
             "[title:All-Seeing]Introducing: the Watchtower. Max one per player. Inherits most properties of settlements. Place the settlement piece on its end face so it's taller than it is wide. It doesn't generate resources. Cannot be upgraded. It costs [number:3,4] [select_from:ore,bricks,lumber] and a [select_from:grain,wool]. The robber cannot be placed on a tile with a Watchtower adjacent."
         );
 
+        // 4 Rules
         $rulesMajor = array(
             "[title:Coastal Champion]To win the game, players must have at least one [select_from:settlement,city] adjacent to water.",
             "[title:Harsh Terrain]Cities cannot be built adjacent to [select_from:desert,mountain,goldmine] terrain tiles.",
