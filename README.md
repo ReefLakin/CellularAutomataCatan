@@ -19,6 +19,7 @@ A landmass generator for Catan Seafarers, using elementary cellular automation.
 - [Changelog](#Changelog)
     - [The Mobile Patch](#The-Mobile-Patch)
     - [The Stylish Update](#The-Stylish-Update)
+    - [The Unruly Update](#The-Unruly-Update)
 - [FAQs](#FAQs)
 - [Special Thanks](#Special-Thanks)
     - [Hexagon Grid](#Vincent-Martin)
@@ -107,10 +108,15 @@ Not all updates are shown here, only the most recent ones.
 
 ### The Unruly Update
 
+Version **1.2.0**. Implemented **10/04/2021**. Introducing: house rules, to make those Catan games spicier than ever before.
+
 ### Features:
 
-- Added a new Catan House Rules Generator, featuring 14 random rules.
+- Added a new Catan House Rules Generator, featuring 20 random rules.
 - Redesigned the navigation menu.
+
+### Changes:
+
 - Refactored the project.
 
 <br>
