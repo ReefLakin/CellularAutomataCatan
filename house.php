@@ -1,5 +1,44 @@
 <?php
 require 'Rule.php';
+
+function returnIntensity($val) {
+
+    $final = 0;
+    $manipulate = rand(1, 100);
+
+    if ($manipulate <= 40) {
+        $final = $val;
+    }
+    elseif ($manipulate <= 55) {
+        $final = $val + 7;
+    }
+    elseif ($manipulate <= 70) {
+        $final = $val - 7;
+    }
+    elseif ($manipulate <= 80) {
+        $final = $val + 18;
+    }
+    elseif ($manipulate <= 90) {
+        $final = $val - 18;
+    }
+    elseif ($manipulate <= 95) {
+        $final = $val + 30;
+    }
+    elseif ($manipulate <= 100) {
+        $final = $val - 30;
+    }
+
+    if ($final <= 30) {
+        return 1;
+    }
+    elseif ($final <= 70) {
+        return 2;
+    }
+    else {
+        return 3;
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -46,16 +85,38 @@ require 'Rule.php';
     </div>
 </nav>
 
+<div class="container-fluid bg-light" style="padding: 5% 15%;text-align: center">
+    <form method="get" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+        <fieldset>
+            <legend>Generation Settings</legend>
+            <label style="text-align: left" class="form-label" for="intensity">Intensity:</label>
+            <input class="form-range" type="range" id="intensity" name="intensity" min="1" max="100" value="<?php if (!empty($_GET["intensity"])) {echo $_GET["intensity"];} ?>">
+            <br><br>
+            <button type="submit" class="btn btn-dark">Generate</button>
+        </fieldset>
+    </form>
+</div>
 
-<div class="container-fluid bg-secondary" style="height: 90vh">
-<?php $rule = new Rule();
-    $rule->generateRule(2);
-    echo $rule->getTitle();
-    echo '<br>';
-    echo $rule->getText();
-    echo '<br>';
-    echo $rule->getIntensity();
+
+<div class="container-fluid bg-dark" style="text-align: center; padding: 9%">
+<?php
+$rule = new Rule();
+if (empty($_GET["intensity"])) {
+    $rule->generateRule(returnIntensity(50));
+}
+else {
+    $rule->generateRule(returnIntensity($_GET["intensity"]));
+}
+
+$tit = $rule->getTitle();
+$tex = $rule->getText();
+
+echo "<h2 style='color: white'>$tit</h2>";
+echo "<p style='color: white'>$tex</p>";
+
+
 ?>
+
 </div>
 
 
