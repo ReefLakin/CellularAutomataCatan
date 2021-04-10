@@ -1,5 +1,5 @@
 <?php
-require 'Rule.php';
+require './classes/Rule.php';
 
 function returnIntensity($val) {
 
@@ -53,9 +53,9 @@ function returnIntensity($val) {
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="styles/bootstrap.css">
+    <link rel="stylesheet" href="../styles/lux.css">
 
-    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="../styles/style.css" rel="stylesheet" type="text/css">
 
     <!-- Title -->
     <title>Catan House Rule Generator</title>
@@ -65,29 +65,9 @@ function returnIntensity($val) {
 <body>
 
 
-<!--<nav class="navbar navbar-expand-lg navbar-dark bg-dark">-->
-<!--    <div class="container-fluid">-->
-<!--        <a class="navbar-brand" href="#">-->
-<!--            <img src="/assets/Catan Tools Logo.png" width="65" height="65" class="d-inline-block align-center" alt="">-->
-<!--            catantools.co.uk-->
-<!--        </a>-->
-<!--        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">-->
-<!--            <span class="navbar-toggler-icon"></span>-->
-<!--        </button>-->
-<!--        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">-->
-<!--            <div class="navbar-nav">-->
-<!--                <a class="nav-link" href="index.php">Landmass Generator<span class="badge badge-secondary" style="margin-left: 5px">New</span></a>-->
-<!--                <a class="nav-link" href="deprecated.php">Deprecated Generator</a>-->
-<!--                <a class="nav-link active" aria-current="page" href="house.php">House Rule Generator<span class="badge badge-secondary" style="margin-left: 5px">New</span></a>-->
-<!--                <a class="nav-link" href="https://github.com/ReefLakin/CellularAutomataCatan">View On GitHub</a>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</nav>-->
-
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="index.php">
+        <a class="navbar-brand" href="../index.php">
             <img src="/assets/Catan Tools Logo.png" width="65" height="65" class="d-inline-block align-center" alt="">
             catantools.co.uk
         </a>
@@ -104,7 +84,7 @@ function returnIntensity($val) {
                         Generators
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" href="index.php">Landmass Generator<span class="badge badge-info" style="margin-left: 5px">New</span></a></li>
+                        <li><a class="dropdown-item" href="../index.php">Landmass Generator<span class="badge badge-info" style="margin-left: 5px">New</span></a></li>
                         <li><a class="dropdown-item" href="deprecated.php">Deprecated Landmass Generator</a></li>
                         <li><a class="dropdown-item" href="house.php">House Rules Generator<span class="badge badge-info" style="margin-left: 5px">New</span></a></li>
                     </ul>
@@ -113,6 +93,7 @@ function returnIntensity($val) {
         </div>
     </div>
 </nav>
+
 
 <div class="container-fluid bg-light" style="padding: 5% 15%;text-align: center">
     <form method="get" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">

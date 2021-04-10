@@ -107,14 +107,11 @@ Not all updates are shown here, only the most recent ones.
 
 ### The Unruly Update
 
-### Planned
-
-- Improve the navigation menu.
-- Refactor the whole project.
-
 ### Features:
 
 - Added a new Catan House Rules Generator, featuring 14 random rules.
+- Redesigned the navigation menu.
+- Refactored the project.
 
 <br>
 
