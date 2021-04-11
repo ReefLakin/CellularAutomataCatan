@@ -106,16 +106,39 @@ Failing this, take matters into your own hands by forking the repo and mucking a
 
 Not all updates are shown here, only the most recent ones.
 
+### Hotfix 1.2.1
+
+Fixed issues with the homepage not displaying correctly. Implemented **11/04/2021**.
+
+#### Fixes:
+
+- Hex grid functions again.
+- Correct styling for the front page.
+
+#### Features:
+
+- Added 6 new Rules.
+    - Helping Hand
+    - Wasteland Wonders
+    - Pick Me Up
+    - Sharing Is Caring
+    - Personal Space
+    - Overpowered
+
+#### Changes:
+
+- Changed the wording of Coastal Champion to make it easier to understand.
+
 ### The Unruly Update
 
 Version **1.2.0**. Implemented **10/04/2021**. Introducing: house rules, to make those Catan games spicier than ever before.
 
-### Features:
+#### Features:
 
 - Added a new Catan House Rules Generator, featuring 20 random rules.
 - Redesigned the navigation menu.
 
-### Changes:
+#### Changes:
 
 - Refactored the project.
 
