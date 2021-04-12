@@ -28,9 +28,9 @@ class Rule
     }
 
     // Random rule retrieval.
-    private function getRule($scale) {
+    private function getRule($scale) { // 32 total rules at current.
 
-        // 8 Rules
+        // 10 Rules
         $rulesMinor = array(
             "[title:Care Package]All players start with [number:2,5] [resources].",
             "[title:Deterrent]The robber starts on the [nice_terrain] tile with the best odds. Devise a fair way to choose if multiple tiles are tied for this title.",
@@ -39,10 +39,12 @@ class Rule
             "[title:Achievement Get]The feat of [select_from:largest army,longest route] is worth 1 extra Victory Point.",
             "[title:Share The Wealth]The first time a player builds a settlement during game time, all other players receive an immediate [resource] resource.",
             "[title:Helping Hand]All players start the game with a random development card.",
-            "[title:Wasteland Wonders]When players build adjacent to a desert tile, they draw [number:1,4] [resource] resources immediately."
+            "[title:Wasteland Wonders]When players build adjacent to a desert tile, they draw [number:1,4] [resource] resources immediately.",
+            "[title:Wanderers]Achieving the longest route card now involves [number:2,3] [select_from:more,less] roads.",
+            "[title:Rally To The Cause]The first player to achieve the feat of largest army gets an immediate 2 [resources]."
         );
 
-        // 9 Rules
+        // 11 Rules
         $rulesModerate = array(
             "[title:Pickpocketing Prowess]Steal two resources instead of one from a single adjacent player when you move the robber to a new tile.",
             "[title:Roadless]When players build their first free settlements at the start of the game, they do not build any free roads branching off.",
@@ -52,10 +54,12 @@ class Rule
             "[title:All-Seeing]Introducing: the Watchtower. Max one per player. Inherits most properties of settlements. Place the settlement piece on its end face so it's taller than it is wide. It doesn't generate resources. Cannot be upgraded. It costs [number:3,4] [select_from:ore,bricks,lumber] and a [select_from:grain,wool]. The robber cannot be placed on a tile with a Watchtower adjacent.",
             "[title:Outcropping]Place every field tile in one corner of the board to form one large field zone.",
             "[title:Intimidation]Knight cards can be played at any time after someone rolls dice. Their usual function is negated. Instead, the player has to re-roll and nobody gets any resources.",
-            "[title:Pick Me Up]At the start of the game, after placing the first settlements, each player rolls a die. They can then pick up that many resources of their choice from the supply, excluding [resources]."
+            "[title:Pick Me Up]At the start of the game, after placing the first settlements, each player rolls a die. They can then pick up that many resources of their choice from the supply, excluding [resources].",
+            "[title:Foreign Goods]Introducing: the Warehouse. Max two per player. Inherits most properties of settlements. Used as an alternative upgrade to a settlement. Place a marker underneath the settlement to identify it as a warehouse. Cannot be upgraded further. Can only be placed next to a port. Used to improve the odds of a port by one, (e.g. 2:1 becomes 1:1). Costs one of each resource to build.",
+            "[title:Road To Nowhere]Players can destroy a road, thereby returning the piece to their hand, twice per game, [select_from:at the cost of 1 brick,for free,costing 2 of any resources]."
         );
 
-        // 9 Rules
+        // 11 Rules
         $rulesMajor = array(
             "[title:Coastal Champion]As an additional win condition, players must have at least one [select_from:settlement,city] adjacent to water.",
             "[title:Harsh Terrain]Cities cannot be built adjacent to [select_from:desert,mountain,goldmine] terrain tiles.",
@@ -65,7 +69,9 @@ class Rule
             "[title:We Have Spoken]Introducing: the Council Building. Max one per player. Inherits most properties of cities. Place the city piece on its largest face so it's wider than it is tall. Used as an upgrade to a city. It costs [number:2,5] [select_from:bricks,grain,lumber] and [number:1,4] [select_from:ore,wool]. To win the game, a player must have a Council Building.",
             "[title:Sharing Is Caring]Every time a [select_from:2,3,4,10,11,12] is rolled, all players must pass at least one resource to the player on their left (if they have any).",
             "[title:Overpowered]Cities generate three resources each time, instead of two.",
-            "[title:Personal Space]Players do not have to abide by the 'distance rule' and can build settlements only one road apart from others."
+            "[title:Personal Space]Players do not have to abide by the 'distance rule' and can build settlements only one road apart from others.",
+            "[title:Master Manipulator]Introducing: the Citadel. Players can build as long as they have a settlement and city piece available. To build, place a city on its largest side-face so it points up like the letter L. Then, place a settlement on top. Cannot be built as an upgrade. Worth 2 victory points. Generates one resource from adjacent tiles. Players can choose to re-roll on their turn for each citadel they own. Costs [number:2,4] [select_from:grain,ore], [number:2,4] [select_from:bricks,wool] and 1 [select_from:lumber,knight card (which you must then discard),other resource of your choosing].",
+            "[title:Game Changer]Play with a 12-sided dice (if you have one available), instead of the six-sided pair usually played with."
         );
 
         $index = 0;
