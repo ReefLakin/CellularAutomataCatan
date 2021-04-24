@@ -20,6 +20,7 @@ A landmass generator for Catan Seafarers, using elementary cellular automation.
     - [The Mobile Patch](#The-Mobile-Patch)
     - [The Stylish Update](#The-Stylish-Update)
     - [The Unruly Update](#The-Unruly-Update)
+    - [The Update That Brought It Home](#The-Update-That-Brought-It-Home)
 - [FAQs](#FAQs)
 - [Special Thanks](#Special-Thanks)
     - [Hexagon Grid](#Vincent-Martin)
@@ -105,6 +106,33 @@ Failing this, take matters into your own hands by forking the repo and mucking a
 ## Changelog
 
 Not all updates are shown here, only the most recent ones.
+
+### The Update That Brought It Home
+
+Version **1.3.0**.
+
+#### Features:
+
+- Added 6 new Rules.
+    - Wanderers
+    - Rally To The Cause
+    - Foreign Goods
+    - Road To Nowhere
+    - Master Manipulator
+    - Game Changer
+
+#### Planned:
+
+- Add a home page to be the face of the website.
+- Change the site from a .co.uk to .net domain.
+- Add a favicon.
+- Add a changelog page.
+- Alter the footer to make it look better.
+- Add information to the landmass generator page.
+- Add good rules as potential suggestions.
+- Allow for many rules to be generated at once, making better use of the intensity slider.
+- Add meta to improve Google page ranking.
+- Restyle the website generally.
 
 ### Hotfix 1.2.1
 
